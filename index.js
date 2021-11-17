@@ -1,10 +1,12 @@
-const fs = require('fs')
+const fs = require('fs');
+var cors = require('cors');
 
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5001
 
 express()
+  .use(cors())
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
