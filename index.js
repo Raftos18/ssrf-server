@@ -9,6 +9,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get('/exploit', (req, res) => res.render('pages/exploit'))
   .get('/flag', (req, res) => {
     const flag = `${req.query.flag}`;
     console.log('Flag', flag);
